@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import categoriesRouter from './routes/categories';
+import subcategoriesRouter from './routes/subcategories';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -13,6 +14,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/categories', categoriesRouter);
+app.use('/api/subcategories', subcategoriesRouter);
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Dua & Ruqyah API!');
